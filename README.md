@@ -1,3 +1,3 @@
-### Natours - Tour Booking Application
+## Natours - Tour Booking Application
 
-## NodeJS / ExpressJS / MongoDB
+ NodeJS / ExpressJS / MongoDB
