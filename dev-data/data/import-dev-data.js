@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const Tour = require('./../../models/tourModel');
 const User = require('./../../models/userModel');
-// const Review = require('./../../models/reviewModel');
+const Review = require('./../../models/reviewModel');
 
 dotenv.config({ path: './config.env' });
 
@@ -21,7 +21,7 @@ const importData = async () => {
   try {
     await Tour.create(tours);
     await User.create(users, { validateBeforeSave: false });
-    // await Review.create(reviews);
+    await Review.create(reviews);
     console.log('Data successfully loaded!');
   } catch (err) {
     console.log(err);
@@ -34,7 +34,7 @@ const deleteData = async () => {
   try {
     await Tour.deleteMany();
     await User.deleteMany();
-    // await Review.deleteMany();
+    await Review.deleteMany();
     console.log('Data successfully deleted!');
   } catch (err) {
     console.log(err);
