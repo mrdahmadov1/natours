@@ -8,6 +8,7 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
 const compression = require('compression');
+const cors = require('cors');
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -20,6 +21,9 @@ const app = express();
 app.enable('trust proxy');
 
 // 1) GLOBAL MIDDLEWARES
+// Implement CORS
+app.use(cors());
+
 // Serving static files
 app.use(express.static(path.join(__dirname, 'public')));
 
